@@ -5,6 +5,10 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .container {
   width: 100%;
@@ -12,50 +16,84 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0f0c29; /* fallback for old browsers */
+  background: #12c2e9; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #24243e,
-    #302b63,
-    #0f0c29
+    #f64f59,
+    #c471ed,
+    #12c2e9
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #24243e,
-    #302b63,
-    #0f0c29
+    #f64f59,
+    #c471ed,
+    #12c2e9
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .login-form {
   background-color: #fff;
-  border-radius: 30px;
-  padding: 2em;
+  border-radius: 50px 0 50px 0;
   min-width: 400px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  color: #0f0c29;
+  padding: 1em;
+  font-size: 20px;
+  margin-bottom: 1em;
+}
+
+.my-form {
+  padding: 1em;
 }
 
 .form-group {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 1em;
 }
 
-.form-group label {
-  margin-bottom: 0.3em;
-  color: #333;
-}
 .form-group input {
-  border: 1px solid #444;
+  border: 1px solid transparent;
   outline: none;
-  border-radius: 3px;
-  padding: 0.3em;
-  /* font-size: 15px; */
+  border-radius: 50px;
+  width: 100%;
+  display: block;
+  padding: 1em;
+  background-color: #ebebeb;
+  font-size: 15px;
+}
+
+.form-group input:focus{
+  border: 1px solid #0f0c29;
+}
+
+
+
+.form-group i {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: none;
+}
+.form-group .error-message{
+  margin: 0.5em 0 0 0.8em;
+  display: none;
+}
+.form-group .forget-pass {
+  color: #302b63;
+  margin: 0.5em 0 0 0.8em;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 2em;
 }
@@ -69,10 +107,57 @@
 }
 
 .btn.confirm {
-  background-color: #1084ff;
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: #fff;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 1em;
+  letter-spacing: 2px;
 }
 
-.btn.confirm:hover {
-  border: 1px solid #1084ff;
+.hide-form {
+  transform: translateY(-200%);
+}
+
+.appear-form {
+  transform: translateY(0);
+  transition: all 1.5s ease;
+}
+
+.form-group.success input{
+    background-color: rgba(6, 126, 6, 0.247);
+}
+
+.form-group.success i.fa-check-circle {
+    display: block !important;
+    color: green;
+}
+
+.form-group.error input{
+    background-color:#ff00003f;
+}
+
+.form-group.error i.fa-exclamation-circle{
+    display: block !important;
+    color: #e42f1b;
+}
+
+.form-group.error .error-message{
+    display: block;
+    color: red;
 }

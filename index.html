@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Home Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="login-form">
-            <form action="#">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email">
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password">
-                </div>
-
-                <div class="form-group">
-                    <label for="repassword">Re Password</label>
-                    <input type="password" id="repassword">
-                </div>
-
-                <div class="buttons">
-                    <button class="btn confirm">Confirm</button>
-                    <button class="btn clear">Clear</button>
-                </div>
-            </form>
+      <div class="login-form hide-form">
+        <div class="header">
+          <h2>Login Form</h2>
         </div>
+
+        <form class="my-form" action="#">
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email"/>
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="far fa-check-circle"></i>
+            <small class="error-message">Error message</small>
+          </div>
+
+          <div class="form-group">
+            <input type="password" id="password" placeholder="Password" />
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="far fa-check-circle"></i>
+            <small class="error-message">Error message</small>
+            <small class="forget-pass"><a href="#">Forget password?</a></small>
+          </div>
+
+          <div class="buttons">
+            <button class="btn confirm" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
