@@ -16,6 +16,33 @@ form.addEventListener("submit", (e) => {
 });
 
 function checkInput(){
-  const emailValue = email.value;
-  const passwordValue = pass.value;
+  const emailValue = email.value.trim();
+  const passwordValue = pass.value.trim();
+
+  if(emailValue == ''){
+    setError(email , 'Email can not be blank !');
+  } else {
+    setSuccess(email);
+  }
+
+  if(passwordValue == '') {
+    setError(pass , 'Please enter your password !');
+  } else {
+    setSuccess(pass)
+  }
 }
+
+function setError(input , message){
+  const formGroup = input.parentElement;
+  const smallErrorMessage = formGroup.querySelector('.error-message');
+  smallErrorMessage.innerText = message;
+  formGroup.classList.add('error');
+  formGroup.classList.remove('success');
+}
+
+function setSuccess(input){
+  const formGroup = input.parentElement;
+  formGroup.classList.add('success');
+  formGroup.classList.remove('error');
+}
+
